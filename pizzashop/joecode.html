@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Pizza Shop</title>
+    <!-----------------------------JQUERY AREA----------------------->
+    <!--CDN Content Delivery Network-->
+    <!--Load the jquery minified version: no comments, no whitespace, streamed-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--<script src="scripts/jquery.min.js"></script>-->
+    <!--Get Locally from our Server-->
+    <!--<script src="scripts/jquery.js"></script>-->
+    <!-----------------------------JSON DATA AREA----------------------->
+    <script>
+        var menuItems = [
+            {"itemID": 1,"pizzaType": "Meat Lovers","cost": 10.00},
+            {"itemID": 2,"pizzaType": "Veg Lovers", "cost": 11.00 },
+            {"itemID": 3,"pizzaType": "Pan Thick", "cost": 12.00 },
+            {"itemID": 4,"pizzaType": "Hot Fire", "cost": 11.00 },
+            {"itemID": 5,"pizzaType": "3 Toppings", "cost": 15.99 },
+        ];
+    </script>
+
+    <!-----------------------------META DATA AREA----------------------->
+    <!--Meta tags can provide search engines with information about the site-->
+    <!--Metadata is always passed as name/value pairs.-->
+    <meta charset="utf-8" />
+    <meta name="description" content="Pizza Shop">
+    <meta name="keywords" content="Pizza, ">
+    <meta name="author" content="Joe Oakes">
+
+    <!-----------------------------CSS STYLE RULES AREA------------------>
+    <!--This is an external style sheet reference-->
+    <link rel="stylesheet" type="text/css" href="styles/common.css" />
+    <!--This is an internal/embedded style sheet rule -->
+    <style type="text/css">
+        /*HTML Style Rule*/
+        h1 {
+            color: blue !important;
+            /*text-align: center;*/
+        }
+
+        nav {
+            width: 100%; /*Uses 100% width of the screen*/
+            height: 40px;
+            font-size: 16px;
+            /*Families: Serif Fonts, Sans-Serif Fonts, Monospace Fonts*/
+            /*font-family: "Times New Roman", Times, serif;*/
+            font-family: Tahoma, Geneva, sans-serif; /*No barbs*/
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 3px 2px 3px #333333; /*CSS3 feature*/
+            background-color: gray;
+            border-radius: 8px; /*CSS3 feature rounded edges*/
+        }
+            /*Unordered list in the nav area*/
+            nav ul {
+                height: auto;
+                padding: 8px 0px;
+                margin: 0px;
+            }
+            /*List item in the nav area*/
+            nav li {
+                display: inline; /*position text horizontally*/
+                padding: 20px;
+            }
+            /*Anchor in the nav area*/
+            nav a {
+                text-decoration: none; /*removes underline*/
+                color: #00F; /* Red Green Blue Channels*/
+                padding: 8px;
+                /*padding: 8px 8px;
+            padding: 8px 8px 8px 8px;*/
+            }
+                /*Anchor in the nav area when the Mouse Hovers over the area*/
+                nav a:hover {
+                    color: #4cff00; /*Lime green*/
+                    background-color: #FFF;
+                }
+
+        footer li {
+            display: inline; /*position text horizontally*/
+            padding: 20px;
+        }
+
+        footer a {
+            text-decoration: none; /*removes underline*/
+        }
+    </style>
+</head>
+<body>
+    <!-----------------------------HEADER AREA----------------------->
+    <header>
+        <!-- float allows elements to float next to each other right, left, none or inherit-->
+        <!-- You can clear the float left, right, both, none, inherit (from parent element)-->
+        <div style="float:left;width:80px;height:80px">
+            <!--<img src="http://upload.wikimedia.org/wikipedia/commons/5/54/Cheese_and_Pepperoni_Pizza_%284825046245%29.jpg" alt="pizza logo" width="80px" height="80px">-->
+        </div>
+        <!-- You can text-align: left, right, center, justify, initial (default value), inherit (from parent element)-->
+        <div style="background-color:gray; text-align: center; font-size: 200%;">
+            Copy Cat Cook
+        </div>
+        <!-----------------------------NAVIGATION DIV----------------------->
+        <nav>
+            <div>
+                <ul>
+                    <li><a href="#home" id="navHome" class="links" rel="home">Main</a></li>
+                    <li><a href="#menu" id="navMenu" class="links" rel="menu">Order Here</a></li>
+                    <li><a href="#about" id="navAbout" class="links" rel="about">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-----------------------------HOME AREA----------------------------->
+    <div id="home" style="display:block">
+        <h1>Home Page Section</h1>
+        <!--<aside style="line-height:30px;background-color:#eeeeee;height:300px;width:100px;float:left;padding:5px;">sidebar 1<br> sidebar 2<br> sidebar 3<br></aside> -->
+        <section>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+
+        </section>
+        <!--<article>self-contained composition (syndication) in a doc</article>-->
+        <img id="cocacola" />
+    </div>
+    <!-----------------------------MENU AREA----------------------------->
+    <div id="menu" style="display:none">
+        <h1>Menu Page Section</h1>
+        <aside>Welcome to Copy Cat Cook</aside>
+        <section></section>
+        <article></article>
+    </div>
+    <!-----------------------------ABOUT AREA---------------------------->
+    <div id="about" style="display:none">
+        <h1>About Page Section</h1>
+        <aside>sidebar</aside>
+        <section>distinct title and region</section>
+        <article>self-contained composition (syndication) in a doc</article>
+    </div>
+    <!-----------------------------TERMS AREA----------------------------->
+    <div id="terms" style="display:none">
+        <h1>Terms Page Section</h1>
+    </div>
+    <!-----------------------------SITE AREA----------------------------->
+    <div id="site" style="display:none">
+        <h1>Site Map Page Section</h1>
+    </div>
+    <!-----------------------------CONTACT AREA---------------------------->
+    <div id="contact" style="display:none">
+        <h1>Contact Page Section</h1>
+    </div>
+    <!-----------------------------FOOTER AREA---------------------------->
+    <footer>
+        <div>
+            <ul>
+                <li></li>
+                <li><a href="#terms" id="ftrTerms">Terms of Use</a></li>
+                <li><a href="#site" id="ftrSite">Site Map</a></li>
+                <li><a href="#contact" id="ftrContact">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-----------------------------JAVASCRIPT AREA----------------------->
+    <script>
+            //When the DOM document is loaded in the browser
+            $(document).ready(function () {
+                //When home link is clicked show home area
+                $("#navHome").click(function (event) {
+                    $("#home").show();
+                    $("#menu, #about, #terms, #site, #contact").hide();
+                });
+                //When menu link is clicked show menu area
+                $("#navMenu").click(function (event) {
+                    $("#menu").show();
+                    $("#home, #about, #terms, #site, #contact").hide();
+                });
+                //When about link is clicked show about area
+                $("#navAbout").click(function (event) {
+                    $("#about").show();
+                    $("#home, #menu, #terms, #site, #contact").hide();
+                });
+                //When terms link is clicked show terms area
+                $("#ftrTerms").click(function (event) {
+                    $("#terms").show();
+                    $("#home, #menu, #about, #site, #contact").hide();
+                });
+                //When site link is clicked show site area
+                $("#ftrSite").click(function (event) {
+                    $("#site").show();
+                    $("#home, #menu, #about, #terms, #contact").hide();
+                });
+                //When contact link is clicked show contact area
+                $("#ftrContact").click(function (event) {
+                    $("#contact").show();
+                    $("#home, #menu, #about, #terms, #site").hide();
+                });
+                //Get JSON data from Facebook
+                $.getJSON("https://graph.facebook.com/cocacola")
+                    .done(function (json) {
+                       $("#cocacola").attr("src", json.cover.source);
+                    })
+                    .fail(function() {
+                       alert("Error connecting to facebook")
+                    });
+                 //Load the Menu Area with the JSON data
+                for (var i in menuItems){
+                    $("#menu").append("<div>"
+                        + "Type: " + menuItems[i].pizzaType
+                        + "Cost: " + menuItems[i].cost.toFixed(2)
+                        + "</div>");
+
+                 }
+                //Get JSON data from Data
+                //$.getJSON("Data/menu.json")
+                //   .done(function (json) {
+                //       //$("#menu").html("<div>" + json.menu[0].pizzaType + "</div>");
+                //   })
+                //   .fail(function () {
+                //       alert("Error connecting to menu.json")
+                //   });
+            });
+    </script>
+
+</body>
+</html>
