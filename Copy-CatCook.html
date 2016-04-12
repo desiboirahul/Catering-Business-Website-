@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+ <title>Copy Cat Cook</title>
+ <!-----------------------------JQUERY AREA----------------------->
+	<!--CDN Content Delivery Network-->
+	 <!--Load the jquery minified version: no comments, no whitespace, streamed-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--<script src="scripts/jquery.min.js"></script>-->
+    <!--Get Locally from our Server-->
+    <!--<script src="scripts/jquery.js"></script>-->
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<!-----------------------------CSS STYLE RULES AREA------------------>
+    <!--This is an external style sheet reference-->
+    <link rel="stylesheet" type="text/css" href="styles/common.css" />
+    <!--This is an internal/embedded style sheet rule -->
+    <style type="text/css">
+        /*HTML Style Rule*/
+		h1 {
+            color: black !important; 
+           	
+            text-align: center;
+        }
+		nav {
+		width: 100%; /*Uses 100% width of the screen*/
+		height: 40px;
+		font-size: 22px;
+		/*Families: Serif Fonts, Sans-Serif Fonts, Monospace Fonts*/
+		/*font-family: "Times New Roman", Times, serif;*/
+		font-family: Tahoma, Geneva, sans-serif;  /*No barbs*/
+		font-weight: bold;
+		text-align: center;
+		text-shadow: 3px 2px 3px #333333; /*CSS3 feature*/
+		background-color: black;   
+		border-radius: 8px; /*CSS3 feature rounded edges*/
+		}
+		/*Unordered list in the nav area*/
+		nav ul {
+			height: auto;
+			padding: 8px 0px;
+			margin: 0px;
+		}
+		/*List item in the nav area*/
+		nav li { 
+			display: inline; /*position text horizontally*/
+			padding: 20px; 
+		}
+		/*Anchor in the nav area*/
+		nav a {
+			text-decoration: none;  /*removes underline*/
+			color: white;    /* Red Green Blue Channels*/
+			padding: 8px;
+			/*padding: 8px 8px;
+			padding: 8px 8px 8px 8px;*/
+		}
+		/*Anchor in the nav area when the Mouse Hovers over the area*/
+		nav a:hover {
+			color: black; 
+			background-color:#E2E2E2;
+		}
+		footer li {
+			display: inline; /*position text horizontally*/
+			padding: 20px; 
+		}
+		footer a {
+			text-decoration: none; /*removes underline*/
+		}
+		
+	#container img /* holds image and adjusts height so that its fixed*/
+	{
+	width:100%;
+	/*height:300px;*/
+	}	
+    	
+	#background
+	{
+	margin: auto 10px;
+    width: auto;
+    height: 2000px;
+	background-color:#E2E2E2;
+	
+}
+
+/* Pictures gallery area*/
+div.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+    
+}
+
+div.img:hover {
+    border: 1px solid #777;
+}
+
+div.img img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+	
+    </style>
+
+</head>
+
+<body>
+     <div id="background">
+     <!-----------------------------HEADER AREA----------------------->
+    <header>
+    <div id="container"> 
+	    <!-- float allows elements to float next to each other right, left, none or inherit-->
+		<!-- You can clear the float left, right, both, none, inherit (from parent element)-->
+		<!-- You can text-align: left, right, center, justify, initial (default value), inherit (from parent element)-->
+			<div id="image" style="display:block"> 
+                <img src="https://i.imgur.com/rs3lNTK.gif" alt="Copy Cat Cook" height="365">
+		</div>
+		</div>
+	<!-----------------------------NAVIGATION DIV----------------------->
+    <nav>
+        <div>
+            <ul>
+                <li><a href="#home" id="navHome" class="links" rel="home">Home</a></li>
+                <li><a href="#menu" id="navMenu" class="links" rel="menu">Menu</a></li>
+                 <li><a href="#catering" id="navCatering" class="links" rel="catering">Catering Services</a></li>
+                <li><a href="#pictures" id="navPictures" class="links" rel="pictures">Pictures</a></li>
+                <li><a href="#about" id="navAbout" class="links" rel="about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+		<!-----------------------------HOME AREA----------------------------->
+       <div id="home" style="display:block">
+            <h1>Welcome</h1>
+            
+            <section style="border:thin black solid"> 
+            <p style="color:black; font-size:21px">
+            This is the welcome page. Text will go here eventually.
+            </p>
+            </section>
+            <!--<article>self-contained composition (syndication) in a doc</article>-->
+                    </div>
+		<!-----------------------------MENU AREA----------------------------->
+        <div id="menu" style="display:none">
+            <h1>Menu Page Section</h1>
+            <aside>sidebar</aside>
+            <section>distinct title and region</section>
+            <article>self-contained composition (syndication) in a doc</article>
+        </div>
+        <!-----------------------------Catering AREA---------------------------->
+        <div id="catering" style="display:none">
+            <h1>Catering Section</h1>
+            <aside>sidebar</aside>
+            <section>distinct title and region</section>
+            <article>self-contained composition (syndication) in a doc</article>
+        </div>
+        <!-----------------------------Pictures AREA----------------------------->
+        <div id="pictures" style="display:none">
+            <h1>Pictures</h1>
+       		<p style="text-align:center">These are just placeholders for actual photos</p>
+       		
+<div class="img">
+  <a target="_blank">
+    <img src="http://www.cateringbyles.com/wp-content/uploads/2013/12/catering-deserts.jpg" alt="pic" width="500" height="300">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="img">
+  <a target="_blank">
+    <img src="http://www.yallamedi.com/uploads/page/image/3/Yalla_CateringWeb.jpg" alt="catering" width="500" height="300">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="img">
+  <a target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="feast" width="500" height="300">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="img">
+  <a target="_blank">
+    <img src="http://barcodedc.com/wp-content/gallery/food/healthfitnessrevolution-com.jpg" alt="food" width="500" height="300">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+            
+                    </div>
+        <!-----------------------------ABOUT AREA---------------------------->
+        <div id="about" style="display:none">
+            <h1>About Page Section</h1>
+            <aside>sidebar</aside>
+            <section>distinct title and region</section>
+            <article>self-contained composition (syndication) in a doc</article>
+        </div>
+        <!-----------------------------FOOTER AREA---------------------------->
+   <div id="footer">
+        <footer>
+            <div>
+                <ul style="text-align: center">
+                    <li>IST420 Row 1 &copy; 2016</li>
+                    <li><a href="#site" id="ftrSite">Site Map</a></li>
+                    <li><a href="#contact" id="ftrContact">Contact Us</a></li>
+                </ul>
+            </div>
+        </footer>
+</div>
+		 <!-----------------------------JAVASCRIPT AREA----------------------->
+        
+        <script>
+            //When the DOM document is loaded in the browser
+            $(document).ready(function () {
+                //When home link is clicked show home area
+                $("#navHome").click(function (event) {
+                    $("#home").show();
+                    $("#menu, #catering, #pictures, #about, #contact").hide();
+                });
+                //When menu link is clicked show menu area
+                $("#navMenu").click(function (event) {
+                    $("#menu").show();
+                    $("#home, #catering, #pictures, #about, #contact").hide();
+                });
+                //When about link is clicked show about area
+                $("#navCatering").click(function (event) {
+                    $("#catering").show();
+                    $("#home, #menu, #pictures, #about, #contact").hide();
+                });
+                //When terms link is clicked show terms area
+                $("#navPictures").click(function (event) {
+                    $("#pictures").show();
+                    $("#home, #menu, #catering, #about, #contact").hide();
+                });
+                //When site link is clicked show site area
+                $("#navAbout").click(function (event) {
+                    $("#about").show();
+                    $("#home, #menu, #catering, #pictures, #contact").hide();
+                });
+                
+                }
+
+	)
+        </script>
+
+
+
+</div>
+</body>
+
+</html>
