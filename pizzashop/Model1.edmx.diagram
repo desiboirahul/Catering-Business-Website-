@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dec8bcc126304569b57268cb21867e02" Name="Diagram1">
+        <EntityTypeShape EntityType="ist420row1Model.Customer" Width="1.5" PointX="8.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ist420row1Model.Food" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ist420row1Model.Worker" Width="1.5" PointX="1.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ist420row1Model.CustFood" Width="1.5" PointX="4.5" PointY="1.375" />
+        <AssociationConnector Association="ist420row1Model.FK__CustFood__Cusid__3B75D760" />
+        <AssociationConnector Association="ist420row1Model.FK__CustFood__FoodId__3C69FB99" />
+        <AssociationConnector Association="ist420row1Model.FK__Customer__Cusid__3A81B327" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

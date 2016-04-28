@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ist420row1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CustFood">
+          <Key>
+            <PropertyRef Name="Cusid" />
+          </Key>
+          <Property Name="Cusid" Type="int" Nullable="false" />
+          <Property Name="FoodId" Type="int" Nullable="false" />
+          <Property Name="CusFirstName" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="CusLastName" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="FoodName" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Cusid" />
+          </Key>
+          <Property Name="Cusid" Type="int" Nullable="false" />
+          <Property Name="CusFirstName" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="CusLastName" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="CusPhoneNum" Type="int" Nullable="false" />
+          <Property Name="CusAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CusOrder" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Food">
+          <Key>
+            <PropertyRef Name="FoodId" />
+          </Key>
+          <Property Name="FoodId" Type="int" Nullable="false" />
+          <Property Name="FoodName" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Worker">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="LastName" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNum" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Password" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__CustFood__Cusid__3B75D760">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="CustFood" Type="Self.CustFood" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Cusid" />
+            </Principal>
+            <Dependent Role="CustFood">
+              <PropertyRef Name="Cusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CustFood__FoodId__3C69FB99">
+          <End Role="Food" Type="Self.Food" Multiplicity="1" />
+          <End Role="CustFood" Type="Self.CustFood" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food">
+              <PropertyRef Name="FoodId" />
+            </Principal>
+            <Dependent Role="CustFood">
+              <PropertyRef Name="FoodId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Customer__Cusid__3A81B327">
+          <End Role="CustFood" Type="Self.CustFood" Multiplicity="1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="CustFood">
+              <PropertyRef Name="Cusid" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="Cusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ist420row1ModelStoreContainer">
+          <EntitySet Name="CustFood" EntityType="Self.CustFood" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Worker" EntityType="Self.Worker" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CustFood__Cusid__3B75D760" Association="Self.FK__CustFood__Cusid__3B75D760">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="CustFood" EntitySet="CustFood" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CustFood__FoodId__3C69FB99" Association="Self.FK__CustFood__FoodId__3C69FB99">
+            <End Role="Food" EntitySet="Food" />
+            <End Role="CustFood" EntitySet="CustFood" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Customer__Cusid__3A81B327" Association="Self.FK__Customer__Cusid__3A81B327">
+            <End Role="CustFood" EntitySet="CustFood" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ist420row1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Cusid" />
+          </Key>
+          <Property Name="Cusid" Type="Int32" Nullable="false" />
+          <Property Name="CusFirstName" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CusLastName" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CusPhoneNum" Type="Int32" Nullable="false" />
+          <Property Name="CusAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CusOrder" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="FoodId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CustFood" Relationship="ist420row1Model.FK__CustFood__Cusid__3B75D760" FromRole="Customer" ToRole="CustFood" />
+          <NavigationProperty Name="CustFood1" Relationship="ist420row1Model.FK__Customer__Cusid__3A81B327" FromRole="Customer" ToRole="CustFood" />
+        </EntityType>
+        <EntityType Name="Food">
+          <Key>
+            <PropertyRef Name="FoodId" />
+          </Key>
+          <Property Name="FoodId" Type="Int32" Nullable="false" />
+          <Property Name="FoodName" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CustFoods" Relationship="ist420row1Model.FK__CustFood__FoodId__3C69FB99" FromRole="Food" ToRole="CustFood" />
+        </EntityType>
+        <EntityType Name="Worker">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNum" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ist420row1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Foods" EntityType="Self.Food" />
+          <EntitySet Name="Workers" EntityType="Self.Worker" />
+          <EntitySet Name="CustFoods" EntityType="ist420row1Model.CustFood" />
+          <AssociationSet Name="FK__CustFood__Cusid__3B75D760" Association="ist420row1Model.FK__CustFood__Cusid__3B75D760">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="CustFood" EntitySet="CustFoods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CustFood__FoodId__3C69FB99" Association="ist420row1Model.FK__CustFood__FoodId__3C69FB99">
+            <End Role="Food" EntitySet="Foods" />
+            <End Role="CustFood" EntitySet="CustFoods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Customer__Cusid__3A81B327" Association="ist420row1Model.FK__Customer__Cusid__3A81B327">
+            <End Role="CustFood" EntitySet="CustFoods" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CustFood">
+          <Key>
+            <PropertyRef Name="Cusid" />
+          </Key>
+          <Property Name="Cusid" Type="Int32" Nullable="false" />
+          <Property Name="FoodId" Type="Int32" Nullable="false" />
+          <Property Name="CusFirstName" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="CusLastName" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="FoodName" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Customer" Relationship="ist420row1Model.FK__CustFood__Cusid__3B75D760" FromRole="CustFood" ToRole="Customer" />
+          <NavigationProperty Name="Food" Relationship="ist420row1Model.FK__CustFood__FoodId__3C69FB99" FromRole="CustFood" ToRole="Food" />
+          <NavigationProperty Name="Customer1" Relationship="ist420row1Model.FK__Customer__Cusid__3A81B327" FromRole="CustFood" ToRole="Customer" />
+        </EntityType>
+        <Association Name="FK__CustFood__Cusid__3B75D760">
+          <End Type="ist420row1Model.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="ist420row1Model.CustFood" Role="CustFood" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Cusid" />
+            </Principal>
+            <Dependent Role="CustFood">
+              <PropertyRef Name="Cusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CustFood__FoodId__3C69FB99">
+          <End Type="ist420row1Model.Food" Role="Food" Multiplicity="1" />
+          <End Type="ist420row1Model.CustFood" Role="CustFood" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food">
+              <PropertyRef Name="FoodId" />
+            </Principal>
+            <Dependent Role="CustFood">
+              <PropertyRef Name="FoodId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Customer__Cusid__3A81B327">
+          <End Type="ist420row1Model.CustFood" Role="CustFood" Multiplicity="1" />
+          <End Type="ist420row1Model.Customer" Role="Customer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="CustFood">
+              <PropertyRef Name="Cusid" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="Cusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ist420row1ModelStoreContainer" CdmEntityContainer="ist420row1Entities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="ist420row1Model.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Cusid" ColumnName="Cusid" />
+                <ScalarProperty Name="CusFirstName" ColumnName="CusFirstName" />
+                <ScalarProperty Name="CusLastName" ColumnName="CusLastName" />
+                <ScalarProperty Name="CusPhoneNum" ColumnName="CusPhoneNum" />
+                <ScalarProperty Name="CusAddress" ColumnName="CusAddress" />
+                <ScalarProperty Name="CusOrder" ColumnName="CusOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Foods">
+            <EntityTypeMapping TypeName="ist420row1Model.Food">
+              <MappingFragment StoreEntitySet="Food">
+                <ScalarProperty Name="FoodId" ColumnName="FoodId" />
+                <ScalarProperty Name="FoodName" ColumnName="FoodName" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Workers">
+            <EntityTypeMapping TypeName="ist420row1Model.Worker">
+              <MappingFragment StoreEntitySet="Worker">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustFoods">
+            <EntityTypeMapping TypeName="ist420row1Model.CustFood">
+              <MappingFragment StoreEntitySet="CustFood">
+                <ScalarProperty Name="FoodName" ColumnName="FoodName" />
+                <ScalarProperty Name="CusLastName" ColumnName="CusLastName" />
+                <ScalarProperty Name="CusFirstName" ColumnName="CusFirstName" />
+                <ScalarProperty Name="FoodId" ColumnName="FoodId" />
+                <ScalarProperty Name="Cusid" ColumnName="Cusid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
