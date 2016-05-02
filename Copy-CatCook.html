@@ -6,7 +6,7 @@
  <!-----------------------------JQUERY AREA----------------------->
 	<!--CDN Content Delivery Network-->
 	 <!--Load the jquery minified version: no comments, no whitespace, streamed-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="jquery.min.js"></script>
     <!--<script src="scripts/jquery.min.js"></script>-->
     <!--Get Locally from our Server-->
     <!--<script src="scripts/jquery.js"></script>-->
@@ -15,8 +15,21 @@
 <!-----------------------------CSS STYLE RULES AREA------------------>
     <!--This is an external style sheet reference-->
     <link rel="stylesheet" type="text/css" href="styles/common.css" />
+    
+    
     <!--This is an internal/embedded style sheet rule -->
     <style type="text/css">
+    body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+
+.thumb {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 50px 0;
+}
         /*HTML Style Rule*/
 		h1 {
             color: black !important; 
@@ -86,7 +99,7 @@
 div.img {
     margin: 5px;
     border: 1px solid #ccc;
-    float: left;
+    float: none;
     width: 180px;
     
 }
@@ -115,7 +128,7 @@ div.desc {
 		<!-- You can clear the float left, right, both, none, inherit (from parent element)-->
 		<!-- You can text-align: left, right, center, justify, initial (default value), inherit (from parent element)-->
 			<div id="image" style="display:block"> 
-                <img src="https://i.imgur.com/rs3lNTK.gif" alt="Copy Cat Cook" height="365">
+                <img src="rs3lNTK.gif" alt="Copy Cat Cook" height="365">
 		</div>
 		</div>
 	<!-----------------------------NAVIGATION DIV----------------------->
@@ -124,7 +137,6 @@ div.desc {
             <ul>
                 <li><a href="#home" id="navHome" class="links" rel="home">Home</a></li>
                 <li><a href="#menu" id="navMenu" class="links" rel="menu">Menu</a></li>
-                 <li><a href="#catering" id="navCatering" class="links" rel="catering">Catering Services</a></li>
                 <li><a href="#pictures" id="navPictures" class="links" rel="pictures">Pictures</a></li>
                 <li><a href="#about" id="navAbout" class="links" rel="about">About</a></li>
             </ul>
@@ -141,7 +153,8 @@ div.desc {
   		Copy Cat Cook specializes in catering and event planning in Philadelphia, Pa. Not only can Copy Cat Cook manage their menus on the website, they can also manage their cooking classes.
             </p>
             </section>
-            <!--<article>self-contained composition (syndication) in a doc</article>-->
+                       <!--<article>self-contained composition (syndication) in a doc</article>-->
+                    
                     </div>
 		<!-----------------------------MENU AREA----------------------------->
         <div id="menu" style="display:none">
@@ -167,84 +180,88 @@ div.desc {
             <p style="text-indent:50px;font-family:'Copperplate Gothic Light'"> -Chocolate mousse cake</p>
            
             
-                                            </div>
-        <!-----------------------------Catering AREA---------------------------->
-        <div id="catering" style="display:none">
-            <h1>Catering Section</h1>
-            <aside>sidebar</aside>
-            <section>distinct title and region</section>
-            <article>self-contained composition (syndication) in a doc</article>
-        </div>
-        <!-----------------------------Pictures AREA----------------------------->
-       <div id="pictures" style="display:none">
-            <h1>Pictures</h1>
-       	
-       		
-<div class="img">
-  <a target="_blank">
-    <img src="http://www.cateringbyles.com/wp-content/uploads/2013/12/catering-deserts.jpg" alt="pic" width="500" height="300">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-    <a target="_blank">
-    <img src="http://i.imgur.com/LY99KZZ.jpg" alt="pic" width="500" height="300">
-  </a>
-  <div class="desc">Buttermilk Fried Chicken Sandwhich</div>
-  </div>
-  
-<div class="img">
-  <a target="_blank">
-    <img src="http://www.yallamedi.com/uploads/page/image/3/Yalla_CateringWeb.jpg" alt="catering" width="500" height="300">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-   <a target="_blank">
-    <img src="http://i.imgur.com/c6XSfgs.jpg" alt="pic" width="500" height="300">
-  </a>
-  <div class="desc">Cilantro Lime Chicken with Avocado Salsa</div>
-  
-</div>
-<div class="img">
-  <a target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="feast" width="500" height="300">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-  <a target="_blank">
-    <img src="http://i.imgur.com/wV5MlvI.jpg" alt="pic" width="500" height="300">
-  </a>
-  <div class="desc">Guacamole Salsa with Salmon</div>
-</div>
-<div class="img">
-  <a target="_blank">
-    <img src="http://barcodedc.com/wp-content/gallery/food/healthfitnessrevolution-com.jpg" alt="food" width="500" height="300">
-  </a>
-  <div class="desc">Breaded Chicken Burger</div>
-  </div>
-<div class="img">
-  <a target="_blank">
-    <img src="http://i.imgur.com/VHnjUFf.jpg" alt="instapic" width="500" height="300">
-  </a>
-  <div class="desc">Skillet Chicken Caprese</div>
-</div>
-<div class="img">
-  <a target="_blank">
-    <img src="http://i.imgur.com/yhhoVZp.jpg" alt="pic" width="500" height="300">
-  </a>
-  <div class="desc">Sweet and Spicy Glazed Salmon</div>
-</div>
-<div class="img">
-  <a target="_blank">
-    <img src="http://i.imgur.com/HWAP1fl.jpg" alt="pic" width="500" height="300">
-  </a>
-  <div class="desc">Lemon and Herb Chicken Fettuccine</div>
-</div>
-            
-                    </div>
-        <!-----------------------------ABOUT AREA---------------------------->
+            <!-----------------------------Pictures AREA----------------------------->
+        	<div id="pictures" style="display:none">
+      	<div class="container">
+        	<div class="row">
+       
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+            <div class="col-lg-12">
+                <h1 class="page-header">Picture Gallery</h1>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="pics/pic1.JPG" style="height:180px" width="300px" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="pics/pic2.jpg" style="height:180px" width="300px" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="pics/pic3.jpg" style="height:180px" width="300px" alt="">
+                </a> 
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="pics/pic4.jpg" style="height:180px" width="300px" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="pics/pic5.jpg" style="height:180px"  width="300px" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="pics/pic6.jpg" style="height:180px" width="300px" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="pics/pic7.jpg" style="height:180px" width="300px" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="pics/pic8.JPG" style="height:180px" width="300px" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="pics/pic9.jpg" style="height:180px"  width="300px" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="pics/pic10.jpg" style="height:180px" width="300px" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="pics/pic11.jpg" style="height:180px"width="300px" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="pics/pic12.jpg" style="height:180px" width="300px" alt="">
+                </a>
+            </div>
+       
+
+        		        <!-----------------------------ABOUT AREA---------------------------->
         <div id="about" style="display:none">
             <h1>About</h1>
           
                
         <div class="content">
-    <p>I (Jeannie Rodriguez) am the President and sole employee of the Copy Cat Cook.  I have been working with small organizations by providing quality service since 2015.</p>
+ <p>I (Jeannie Rodriguez) am the President and sole employee of the Copy Cat Cook.  I have been working with small organizations by providing quality service since 2015.</p>
 <p>I live in Philadelphia, Pennsylvania with my husband, two yound men, and a bichon (Buddy).  We lived here all our lives.  Philadelphia is a great city and offers alot of small cafe's and venues for a foodie like me. We love to take advantage of all the great things a city like Philadelphia has to offer and have been extremely happy with our choice and the community in which we live.</p>
 <h3>Interests</h3>
 <p>My main passion is for the food industry and it's related communities.  I spend an exorbitant amount of time researching internet trends on how to prepare and showcase my catering business.  When I'm not working with Philadelphia organizations, I enjoy:</p>
@@ -253,7 +270,7 @@ div.desc {
 <li>swimming, will never be my favorite, but there is something spiritual about laps</li>
 <li>listening to and watching music, I find music to be one of my main inspirations</li>
 <li>reading, from blogs to magazines to books, I can't get enough</li>
-<li>volunteering, helping to build a community</li>
+<li>volunteering, helping to build a community.</li>
 </ul>
 
                         
@@ -303,14 +320,14 @@ div.desc {
 
 
  
-
         </div>
+     
         <!-----------------------------FOOTER AREA---------------------------->
    <div id="footer">
         <footer>
             <div>
                 <ul style="text-align: center">
-                    <li>Copy Cat Cook &copy; 2016</li>
+                    <li>Copy Cat Cook &copy; 2015</li>
                 </ul>
             </div>
         </footer>
